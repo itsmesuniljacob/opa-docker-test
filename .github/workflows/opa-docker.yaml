@@ -1,0 +1,17 @@
+name: build
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: OPA Docker
+      uses: itsmesuniljacob/opa-docker@main
+      with:
+          file: Dockerfile
